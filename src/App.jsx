@@ -19,7 +19,9 @@ export default function App() {
   const enMantenimiento = MODO_MANTENIMIENTO || rutaActual === '/mantenimiento';
   const contenidoPagina = enMantenimiento ? PAGINA_MANTENIMIENTO : pagina || PAGINA_NO_ENCONTRADA;
   
-  const esRutaLogin = location.pathname === '/';
+ const esRutaLogin = ['/', '/registro', '/recuperar-clave'].includes(
+  location.pathname
+);
 
   return (
     <div className="bg-light min-vh-100">

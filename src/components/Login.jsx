@@ -1,11 +1,12 @@
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const navigate = useNavigate();
 
   const manejarIngreso = (e) => {
-    e.preventDefault(); 
-    navigate('/inicio'); 
+    e.preventDefault();
+    navigate('/inicio');
   };
 
   return (
@@ -33,9 +34,9 @@ export default function Login() {
         </form>
 
         <div className="text-center" style={{ fontSize: '0.85rem' }}>
-          <a href="#" className="text-decoration-none d-block mb-3">REGISTRARSE</a>
+          <Link to="/registro" className="text-decoration-none d-block mb-3">REGISTRARSE</Link>
           <a href="#" className="text-decoration-none text-muted d-block mb-3">¿Olvidó su clave? Haga click <span className="text-primary fw-bold">aquí</span></a>
-          
+
           <div className="d-flex justify-content-between text-muted" style={{ fontSize: '0.75rem' }}>
             <a href="https://smt.gob.ar/" className="text-decoration-none">Volver a la pagina principal</a>
           </div>
