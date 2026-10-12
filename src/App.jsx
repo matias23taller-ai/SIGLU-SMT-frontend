@@ -46,8 +46,9 @@ export default function App() {
 
         {MODO_MANTENIMIENTO ? <Mantenimiento /> : <Rutas datos={datosFalsos} />}
       </main>
-
-      <Footer />
+      {!esRutaLogin && (
+        <Footer />
+      )}
     </div>
   );
 }
