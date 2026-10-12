@@ -39,7 +39,7 @@ export default function Clima() {
     obtenerClima();
   }, []); 
 
-  if (cargando) return <span className="badge bg-secondary shadow-sm">Cargando clima...</span>;
+  if (cargando) return <span className="badge bg-secondary">Cargando clima...</span>;
   if (!clima) return null; 
 
   const estado = obtenerEstadoClima(clima.weathercode);

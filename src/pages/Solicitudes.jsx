@@ -88,7 +88,7 @@ export default function Solicitudes({ datos }) {
       </div>
 
       <div className="col-12 col-xl-8">
-        <div className="card border-0 shadow-sm">
+        <div className="card border-0 ">
           <div className="card-body">
             <h2 className="h5 mb-3">Registro de solicitudes</h2>
             
