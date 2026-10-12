@@ -57,12 +57,12 @@ export default function Inicio({ datos }) {
   return (
     <>
       <section
-        className="bg-primary bg-gradient text-white rounded-4 shadow-sm p-4 p-md-5 mb-4"
+        className="bg-primary bg-gradient text-white rounded-4 p-4 p-md-5 mb-4"
         aria-labelledby="presentacion-siglu"
       >
         <div className="row align-items-center g-4">
           <div className="col-12 col-lg-8">
-            <span className="badge rounded-pill bg-white text-primary mb-3">
+            <span className="badge bg-white text-primary mb-3">
               Sistema de Gestión de Limpieza Urbana
             </span>
             <h2 className="display-6 fw-bold mb-3" id="presentacion-siglu">
@@ -126,7 +126,7 @@ export default function Inicio({ datos }) {
         <div className="row g-3">
           {servicios.map((servicio) => (
             <div className="col-12 col-md-6 col-xl-3" key={servicio.ruta}>
-              <article className="card h-100 rounded-4 border-0 shadow-sm tarjeta-interactiva">
+              <article className="card h-100 rounded-4 border-0 tarjeta-interactiva">
                 <div className="card-body d-flex flex-column p-4">
                   <span
                     className={`badge align-self-start bg-${servicio.color}-subtle text-${servicio.color}-emphasis mb-3`}
@@ -150,7 +150,7 @@ export default function Inicio({ datos }) {
         </div>
       </section>
       <section
-        className="card shadow-sm rounded-4 border-0 mb-4"
+        className="card rounded-4 border-0 mb-4"
         aria-labelledby="trabajos-pendientes"
       >
         <div className="card-body">

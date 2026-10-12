@@ -7,6 +7,7 @@ import Imbornales from '../../pages/Imbornales.jsx';
 import Desagotes from '../../pages/Desagotes.jsx';
 import NoEncontrada from '../../pages/NoEncontrada.jsx';
 import Mantenimiento from '../../pages/Mantenimiento.jsx';
+import Registro from '../../pages/Registro.jsx';
 
 export default function Rutas({
   datos,
@@ -22,6 +23,7 @@ export default function Rutas({
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/inicio" element={<Inicio datos={datos} />} />
+      <Route path="/registro" element={<Registro />} />
       
       <Route
         path="/solicitudes"

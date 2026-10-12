@@ -12,14 +12,17 @@ export default function App() {
   const location = useLocation();
   
   let rutaActual = location.pathname;
-  if (rutaActual === '/') {
-    rutaActual = '/inicio'; 
+  if (rutaActual.endsWith('/') && rutaActual.length > 1) { 
+    rutaActual = rutaActual.slice(0, -1);
   }
+  
   const pagina = PAGINAS.find((item) => item.ruta === rutaActual);
   const enMantenimiento = MODO_MANTENIMIENTO || rutaActual === '/mantenimiento';
   const contenidoPagina = enMantenimiento ? PAGINA_MANTENIMIENTO : pagina || PAGINA_NO_ENCONTRADA;
   
-  const esRutaLogin = location.pathname === '/';
+ const esRutaLogin = ['/', '/registro', '/recuperar-clave'].includes(
+  location.pathname
+);
 
   return (
     <div className="bg-light min-vh-100">
@@ -46,8 +49,9 @@ export default function App() {
 
         {MODO_MANTENIMIENTO ? <Mantenimiento /> : <Rutas datos={datosFalsos} />}
       </main>
-
-      <Footer />
+      {!esRutaLogin && (
+        <Footer />
+      )}
     </div>
   );
 }
