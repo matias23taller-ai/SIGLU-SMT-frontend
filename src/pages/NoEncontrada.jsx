@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function NoEncontrada() {
   return (
     <section
-      className="card border-0 rounded-4 shadow-sm text-center p-4 p-md-5"
+      className="card border-0 rounded-4 text-center p-4 p-md-5"
       aria-labelledby="ayuda-navegacion"
     >
       <div className="card-body">
