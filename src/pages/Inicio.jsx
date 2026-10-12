@@ -126,7 +126,7 @@ export default function Inicio({ datos }) {
         <div className="row g-3">
           {servicios.map((servicio) => (
             <div className="col-12 col-md-6 col-xl-3" key={servicio.ruta}>
-              <article className="card h-100 rounded-4 border-0 shadow-sm">
+              <article className="card h-100 rounded-4 border-0 shadow-sm tarjeta-interactiva">
                 <div className="card-body d-flex flex-column p-4">
                   <span
                     className={`badge align-self-start bg-${servicio.color}-subtle text-${servicio.color}-emphasis mb-3`}

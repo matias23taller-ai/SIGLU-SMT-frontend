@@ -4,9 +4,9 @@ export default function Navbar({ paginas }) {
   if (!paginas) return null;
 
   return (
-    <nav className="navbar navbar-expand bg-dark navbar-dark mb-4">
+    <nav className="navbar navbar-expand bg-dark navbar-dark mb-4 sticky-top">
       <div className="container">
-        <ul className="navbar-nav d-flex flex-row gap-3">
+        <ul className="navbar-nav d-flex flex-row gap-3 menu-deslizable">
           {paginas.map((pagina) => (
             <li className="nav-item" key={pagina.ruta}>
               <Link className="nav-link" to={pagina.ruta}>
