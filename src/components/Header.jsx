@@ -1,3 +1,6 @@
+import Clima from './Clima';
+
+
 export default function Header() {
     return (
         <header className="bg-primary bg-gradient text-white py-3 shadow-sm">
@@ -9,6 +12,7 @@ export default function Header() {
                         <p className="small mb-0 opacity-75">Gestión de Limpieza Urbana</p>
                     </div>
                 </div>
+                <Clima />
             </div>
         </header>
     );
