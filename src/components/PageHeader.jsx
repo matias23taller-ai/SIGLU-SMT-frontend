@@ -4,7 +4,7 @@ export default function PageHeader({ titulo, descripcion }) {
       <h1 className="h2" id="titulo-pagina">
         {titulo}
       </h1>
-      <p className="text-secondary mb-0">{descripcion}</p>
+      <p>{descripcion}</p>
     </div>
   );
 }

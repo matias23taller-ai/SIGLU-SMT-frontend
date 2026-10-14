@@ -15,7 +15,6 @@ export default function MenuUsuario() {
             <button
                 type="button"
                 className="btn border-0 d-flex align-items-center"
-                style={{ color: 'inherit' }}
                 onClick={() => setAbierto(!abierto)}
                 aria-label="Opciones de usuario"
                 aria-expanded={abierto}
@@ -24,8 +23,7 @@ export default function MenuUsuario() {
             </button>
 
             {abierto && (
-                <div className="dropdown-menu show shadow"
-                    style={{ right: 0, left: 'auto' }}>
+                <div className="dropdown-menu show end-0">
                     <button type="button" className="dropdown-item"
                         onClick={cerrarSesion}>
                         Cerrar sesión
