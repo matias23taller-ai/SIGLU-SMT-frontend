@@ -10,18 +10,14 @@ import Header from './components/Header.jsx';
 
 export default function App() {
   const location = useLocation();
-  
-  let rutaActual = location.pathname;
-  if (rutaActual.endsWith('/') && rutaActual.length > 1) { 
-    rutaActual = rutaActual.slice(0, -1);
-  }
-  
+  const rutaActual = location.pathname;
+
   const pagina = PAGINAS.find((item) => item.ruta === rutaActual);
   const enMantenimiento = MODO_MANTENIMIENTO || rutaActual === '/mantenimiento';
   const contenidoPagina = enMantenimiento ? PAGINA_MANTENIMIENTO : pagina || PAGINA_NO_ENCONTRADA;
   
- const esRutaLogin = ['/', '/registro', '/recuperar-clave'].includes(
-  location.pathname
+ const esRutaLogin = ['/','/login', '/registro', '/recuperar-clave'].includes(
+  rutaActual
 );
 
   return (

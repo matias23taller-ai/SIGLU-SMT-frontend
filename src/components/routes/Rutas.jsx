@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
-import Login from '../Login.jsx'; 
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Login from '../../pages/Login.jsx';
 import Inicio from '../../pages/Inicio.jsx';
 import Solicitudes from '../../pages/Solicitudes.jsx';
 import Inspecciones from '../../pages/Inspecciones.jsx';
@@ -9,62 +9,21 @@ import NoEncontrada from '../../pages/NoEncontrada.jsx';
 import Mantenimiento from '../../pages/Mantenimiento.jsx';
 import Registro from '../../pages/Registro.jsx';
 
-export default function Rutas({
-  datos,
-  agregarSolicitud,
-  cambiarEstadoSolicitud,
-  agregarActa,
-  cambiarEstadoActa,
-  agregarImbornal,
-  actualizarImbornal,
-  programarDesagote
-}) {
+export default function Rutas({ datos }) {
+  const location = useLocation();
+  if (location.pathname.endsWith('/') && location.pathname.length > 1) {
+    return <NoEncontrada />;
+  }
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Login/>} />
+      <Route path="/login" element={<Login />} />
       <Route path="/inicio" element={<Inicio datos={datos} />} />
       <Route path="/registro" element={<Registro />} />
-      
-      <Route
-        path="/solicitudes"
-        element={
-          <Solicitudes
-            datos={datos}
-            agregar={agregarSolicitud}
-            cambiarEstado={cambiarEstadoSolicitud}
-          />
-        }
-      />
-      <Route
-        path="/inspecciones"
-        element={
-          <Inspecciones
-            datos={datos}
-            agregar={agregarActa}
-            cambiarEstado={cambiarEstadoActa}
-          />
-        }
-      />
-      <Route
-        path="/imbornales"
-        element={
-          <Imbornales
-            datos={datos}
-            agregar={agregarImbornal}
-            actualizar={actualizarImbornal}
-          />
-        }
-      />
-      <Route
-        path="/desagotes"
-        element={
-          <Desagotes
-            datos={datos}
-            programar={programarDesagote}
-            cambiarEstado={cambiarEstadoSolicitud}
-          />
-        }
-      />
+      <Route path="/solicitudes" element={<Solicitudes datos={datos} />} />
+      <Route path="/inspecciones" element={<Inspecciones datos={datos} />} />
+      <Route path="/imbornales" element={<Imbornales datos={datos} />} />
+      <Route path="/desagotes" element={<Desagotes datos={datos} />} />
       <Route path="*" element={<NoEncontrada />} />
       <Route path="/404" element={<NoEncontrada />} />
       <Route path="/mantenimiento" element={<Mantenimiento />} />
