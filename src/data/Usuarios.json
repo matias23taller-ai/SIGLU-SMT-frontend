@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "nombre": "Usuario Lisandro",
+    "legajo": "5746",
+    "password": "Admin123",
+    "rol": "administrador"
+  },
+  {
+    "id": 2,
+    "nombre": "Usuario Matias",
+    "legajo": "4942",
+    "password": "Admin246",
+    "rol": "inspector"
+  }
+]

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import MenuUsuario from './MenuUsuario';
 
 export default function Navbar({ paginas }) {
   if (!paginas) return null;
@@ -15,6 +16,7 @@ export default function Navbar({ paginas }) {
             </li>
           ))}
         </ul>
+        <MenuUsuario />
       </div>
     </nav>
   );

@@ -21,7 +21,7 @@ export default function App() {
 );
 
   return (
-    <div className="bg-light min-vh-100">
+    <div className="min-vh-100">
       <Seo
         titulo={esRutaLogin ? "Login - SIGLU" : contenidoPagina.titulo}
         descripcion={contenidoPagina.descripcion}
