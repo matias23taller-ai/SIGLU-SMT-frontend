@@ -49,7 +49,7 @@ export default function Clima() {
       <span className="fs-4">{estado.emoji}</span>
       <div className="d-flex flex-column lh-1">
         <span className="fw-bold">{clima.temperature}°C - {estado.texto}</span>
-        <span className="text-muted" style={{ fontSize: '0.75rem' }}>San Miguel de Tucumán</span>
+        <span className="text-muted small">San Miguel de Tucumán</span>
       </div>
     </div>
   );

@@ -10,7 +10,6 @@ export default function Login() {
   };
 
   return (
-    
     <div id="login-bg-institucional" className="d-flex justify-content-center align-items-center vh-100">
       <div className="card border-0 p-4 w-100" style={{ maxWidth: '350px' }}>
         <div className="text-center mb-4">
@@ -33,11 +32,11 @@ export default function Login() {
           </button>
         </form>
 
-        <div className="text-center" style={{ fontSize: '0.85rem' }}>
+        <div className="text-center small">
           <Link to="/registro" className="text-decoration-none d-block mb-3">REGISTRARSE</Link>
           <a href="#" className="text-decoration-none text-muted d-block mb-3">¿Olvidó su clave? Haga click <span className="text-primary fw-bold">aquí</span></a>
 
-          <div className="d-flex justify-content-between text-muted" style={{ fontSize: '0.75rem' }}>
+          <div className="d-flex justify-content-between text-muted small">
             <a href="https://smt.gob.ar/" className="text-decoration-none">Volver a la pagina principal</a>
           </div>
         </div>
