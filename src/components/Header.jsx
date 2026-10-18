@@ -1,6 +1,5 @@
 import Clima from './Clima';
 
-
 export default function Header() {
     return (
         <header className="bg-dark text-white py-3">

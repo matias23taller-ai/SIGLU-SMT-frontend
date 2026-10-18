@@ -22,15 +22,10 @@ export default function Login() {
     cargarUsuarios();
   }, []);
 
-  const manejarIngreso = (e) => {
-    e.preventDefault();
+  const manejarIngreso = (evento) => {
+    evento.preventDefault();
 
-    if (usuarios.length === 0) {
-      Swal.fire('Aviso', 'Los usuarios todavía no están disponibles.', 'info');
-      return;
-    }
-
-    const formulario = e.currentTarget;
+    const formulario = evento.currentTarget;
     const legajo = formulario.querySelector('input[type="text"]').value.trim();
     const password = formulario.querySelector('input[type="password"]').value;
 
@@ -81,16 +76,16 @@ export default function Login() {
             <input type="password" className="form-control border-0 border-bottom rounded-0 px-0" required />
           </div>
 
-          <button type="submit" className="btn btn-primary w-100 fw-bold mb-3" style={{ borderRadius: '6px' }}>
+          <button type="submit" className="btn btn-primary w-100 fw-bold mb-3 rounded-4">
             INGRESAR
           </button>
         </form>
 
-        <div className="text-center" style={{ fontSize: '0.85rem' }}>
+        <div className="text-center small">
           <Link to="/registro" className="text-decoration-none d-block mb-3">REGISTRARSE</Link>
           <a href="#" className="text-decoration-none text-muted d-block mb-3">¿Olvidó su clave? Haga click <span className="text-primary fw-bold">aquí</span></a>
 
-          <div className="d-flex justify-content-between text-muted" style={{ fontSize: '0.75rem' }}>
+          <div className="d-flex justify-content-between text-muted small" >
             <a href="https://smt.gob.ar/" className="text-decoration-none">Volver a la pagina principal</a>
           </div>
         </div>

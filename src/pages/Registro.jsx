@@ -103,7 +103,7 @@ export default function Registro() {
 
                 <div className="form-check my-3">
                   <input id="mostrarClave" type="checkbox" className="form-check-input"
-                    checked={mostrarClave} onChange={(e) => setMostrarClave(e.target.checked)} />
+                    checked={mostrarClave} onChange={(evento) => setMostrarClave(evento.target.checked)} />
                   <label htmlFor="mostrarClave" className="form-check-label">
                     Mostrar contraseñas
                   </label>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Badge from '../components/Etiquetas.jsx';
 
 export default function Solicitudes({ datos }) {
   const solicitudes = datos?.solicitudes || [];
@@ -30,11 +31,11 @@ export default function Solicitudes({ datos }) {
   return (
     <div className="row g-4">
       <div className="col-12 col-xl-4">
-        <div className="card border-0 shadow-sm">
+        <div className="card border-0 ">
           <div className="card-body">
             <h2 className="h5 mb-3">Nueva solicitud</h2>
             
-            <form onSubmit={(e) => e.preventDefault()}>
+            <form onSubmit={(evento) => evento.preventDefault()}>
               <div className="mb-3">
                 <label className="form-label fw-bold">Tipo de servicio</label>
                 <select className="form-select">
@@ -47,12 +48,12 @@ export default function Solicitudes({ datos }) {
 
               <div className="mb-3">
                 <label className="form-label fw-bold">Ubicación</label>
-                <input type="text" className="form-control" required maxLength={160} placeholder="Usá una ubicación de práctica" />
+                <input type="text" className="form-control" required maxLength={160} />
               </div>
 
               <div className="mb-3">
                 <label className="form-label fw-bold">Descripción del trabajo</label>
-                <textarea className="form-control" required maxLength={1000} rows="3"></textarea>
+                <textarea className="form-control" required maxLength={1000}></textarea>
               </div>
 
               <div className="mb-3">
@@ -65,7 +66,7 @@ export default function Solicitudes({ datos }) {
               </div>
 
               <div className="mb-3">
-                <label className="form-label fw-bold">Contacto de práctica (opcional)</label>
+                <label className="form-label fw-bold">Teléfono de contacto (opcional)</label>
                 <input type="tel" className="form-control" maxLength={30} />
               </div>
 
@@ -111,9 +112,6 @@ export default function Solicitudes({ datos }) {
 
             <div className="table-responsive">
               <table className="table align-middle">
-                <caption className="small text-muted">
-                  {solicitudes.length} solicitudes encontradas. El estado mostrado corresponde al trabajo operativo.
-                </caption>
                 <thead className="table-light">
                   <tr>
                     <th>Número y servicio</th>
@@ -124,8 +122,7 @@ export default function Solicitudes({ datos }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {solicitudes.length > 0 ? (
-                    solicitudes.map((item) => (
+                  {solicitudes.map((item) => (
                       <tr key={item.id}>
                         <th scope="row">
                           {item.id}
@@ -136,13 +133,9 @@ export default function Solicitudes({ datos }) {
                           <span className="d-block small text-secondary">06/10/2026</span>
                         </td>
                         <td>
-                      
-                          <span className={`badge bg-${item.prioridad === 'Alta' ? 'danger' : item.prioridad === 'Baja' ? 'secondary' : 'warning text-dark'}`}>
-                            {item.prioridad || 'Media'}
-                          </span>
+                          <Badge texto={item.prioridad} />
                         </td>
                         <td>
-                        
                           <select className="form-select form-select-sm" defaultValue={item.estado}>
                             <option value="Pendiente">Pendiente</option>
                             <option value="Programado">Programado</option>
@@ -153,18 +146,12 @@ export default function Solicitudes({ datos }) {
                         <td>
                           <button
                             className="btn btn-outline-primary btn-sm"
-                            onClick={() => setHistorialId(item.id)}
-                          >
-                            Ver
+                            onClick={() => setHistorialId(item.id)}> Ver
                           </button>
                         </td>
                       </tr>
                     ))
-                  ) : (
-                    <tr>
-                      <td colSpan="5" className="text-center py-4 text-muted">No hay solicitudes para mostrar.</td>
-                    </tr>
-                  )}
+                  }
                 </tbody>
               </table>
             </div>
@@ -183,9 +170,9 @@ export default function Solicitudes({ datos }) {
                   </p>
                 )}
                 
-                <p className="small text-secondary mb-2 fw-bold">Historial local de práctica:</p>
+                <p className="small text-secondary mb-2 fw-bold">Historial de seguimiento:</p>
                 <ul className="small mb-0 text-muted">
-                  <li>06/10/2026, 10:00:00 · Solicitud registrada en el prototipo.</li>
+                  <li>06/10/2026, 10:00:00 · Solicitud ingresada al sistema.</li>
                   <li>06/10/2026, 10:05:00 · Estado operativo: {seleccionada.estado}.</li>
                 </ul>
               </div>

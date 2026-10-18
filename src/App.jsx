@@ -24,8 +24,6 @@ export default function App() {
     <div className="min-vh-100">
       <Seo
         titulo={esRutaLogin ? "Login - SIGLU" : contenidoPagina.titulo}
-        descripcion={contenidoPagina.descripcion}
-        noIndex={!pagina || enMantenimiento}
       />
       
       {!esRutaLogin && !enMantenimiento && (
