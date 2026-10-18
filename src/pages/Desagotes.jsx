@@ -19,7 +19,9 @@ export default function Desagotes({ datos }) {
                 <label className="form-label fw-bold">Pedido pendiente</label>
                 <select className="form-select">
                   <option value="">Seleccionar pedido...</option>
-                  {pedidosDesagote.filter(pedido => pedido.estado === 'Pendiente').map(pedido => (
+                  {pedidosDesagote
+                  .filter(pedido => pedido.estado === 'Pendiente')
+                  .map(pedido => (
                     <option key={pedido.id} value={pedido.id}>{pedido.id} - {pedido.ubicacion}</option>
                   ))}
                 </select>
