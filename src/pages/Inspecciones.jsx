@@ -4,32 +4,30 @@ export default function Inspecciones({ datos }) {
 
   return (
     <div className="d-flex flex-column gap-4">
-      
-
-      <div className="card shadow-sm">
+      <div className="card">
         <div className="card-body">
           <h5 className="card-title fw-bold mb-4">Registrar acta </h5>
           
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={(evento) => evento.preventDefault()}>
             
             <div className="row mb-3">
               <div className="col-md-6">
                 <label className="form-label fw-semibold">Solicitud relacionada</label>
                 <select className="form-select">
                   <option value="">Elegí una solicitud</option>
-                  {solicitudes.map(s => (
-                    <option key={s.id} value={s.id}>{s.id} - {s.ubicacion}</option>
+                  {solicitudes.map(solicitud => (
+                    <option key={solicitud.id} value={solicitud.id}>{solicitud.id} - {solicitud.ubicacion}</option>
                   ))}
                 </select>
               </div>
               <div className="col-md-3">
                 <label className="form-label fw-semibold">Número del acta</label>
-                <input type="text" className="form-control" defaultValue="FICTICIA-002" />
+                <input type="text" className="form-control" placeholder="ACTA-2026-XXX" />
               </div>
               <div className="col-md-3">
                 <label className="form-label fw-semibold">Fecha del acta</label>
       
-                <input type="date" className="form-control" defaultValue="2026-10-06" />
+                <input type="date" className="form-control"/>
               </div>
             </div>
 
@@ -57,7 +55,7 @@ export default function Inspecciones({ datos }) {
               </div>
               <div className="col-md-6">
                 <label className="form-label fw-semibold">Referencia de la copia del acta (opcional)</label>
-                <input type="text" className="form-control" placeholder="Nombre o referencia documental de práctica" />
+                <input type="text" className="form-control"/>
               </div>
             </div>
 
@@ -69,7 +67,7 @@ export default function Inspecciones({ datos }) {
       </div>
 
   
-      <div className="card shadow-sm">
+      <div className="card">
         <div className="card-body">
           <h5 className="card-title fw-bold mb-4">Seguimiento administrativo</h5>
           
@@ -84,8 +82,7 @@ export default function Inspecciones({ datos }) {
                 </tr>
               </thead>
               <tbody>
-                {actas.length > 0 ? (
-                  actas.map((acta) => (
+                {actas.map((acta) => (
                     <tr key={acta.id}>
                     
                       <td>
@@ -111,20 +108,12 @@ export default function Inspecciones({ datos }) {
                         </select>
                       </td>
                     </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="4" className="text-center text-muted py-4">
-                      No hay actas registradas.
-                    </td>
-                  </tr>
-                )}
+                  ))}
               </tbody>
             </table>
           </div>
         </div>
       </div>
-
     </div>
   );
 }

@@ -85,7 +85,7 @@ export default function Inicio({ datos }) {
             </div>
           </div>
           <div className="col-12 col-lg-4">
-            <div className="bg-white text-dark rounded-4 p-4 shadow-sm">
+            <div className="bg-white text-dark rounded-4 p-4">
               <p className="small text-uppercase fw-semibold text-primary mb-2">
                 Seguimiento operativo
               </p>
@@ -108,7 +108,7 @@ export default function Inicio({ datos }) {
           {indicadores.map(([titulo, cantidad, color]) => (
             <div className="col-12 col-sm-6 col-xl-3" key={titulo}>
               <div
-                className={`card h-100 rounded-4 shadow-sm border-0 border-start border-4 border-${color}`}
+                className={`card h-100 rounded-4 border-0 border-start border-4 border-${color}`}
               >
                 <div className="card-body">
                   <p className="text-secondary mb-1">{titulo}</p>
@@ -138,7 +138,7 @@ export default function Inicio({ datos }) {
                     {servicio.detalle}
                   </p>
                   <Link
-                    className={`btn btn-outline-${servicio.color === 'warning' ? 'dark' : servicio.color} btn-sm mt-2`}
+                    className={`btn btn-${servicio.color} btn-sm mt-2`}
                     to={servicio.ruta}
                   >
                     Abrir {servicio.titulo.toLowerCase()}

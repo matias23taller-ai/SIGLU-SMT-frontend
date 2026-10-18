@@ -19,7 +19,7 @@ export default function MenuUsuario() {
                 aria-label="Opciones de usuario"
                 aria-expanded={abierto}
             >
-                <i class="fa-solid fa-user-tie fs-2"></i>
+                <i className="fa-solid fa-user-tie fs-2"></i>
             </button>
 
             {abierto && (
